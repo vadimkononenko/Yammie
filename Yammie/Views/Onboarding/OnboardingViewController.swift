@@ -55,6 +55,16 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
+    }
+    
+    private func configure() {
+        setupCollectionView()
+        setupViews()
+        setupConstraints()
+    }
+    
+    private func setupCollectionView() {
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
         onboardingCollectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: OnboardingCollectionViewCell.reuseId)
@@ -62,13 +72,6 @@ class OnboardingViewController: UIViewController {
         onboardingCollectionView.showsHorizontalScrollIndicator = false
         onboardingCollectionView.showsVerticalScrollIndicator = false
         onboardingCollectionView.isPagingEnabled = true
-        
-        configure()
-    }
-    
-    private func configure() {
-        setupViews()
-        setupConstraints()
     }
     
     @objc private func nextButtonClicked() {

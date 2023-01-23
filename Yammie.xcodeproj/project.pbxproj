@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D9D4297D7F6700039AB8 /* HomeViewController.swift */; };
+		A747D9DF297E857200039AB8 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D9DE297E857200039AB8 /* CategoryView.swift */; };
 		A7B34E0429781828005AC14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E0329781828005AC14E /* AppDelegate.swift */; };
 		A7B34E0629781828005AC14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E0529781828005AC14E /* SceneDelegate.swift */; };
 		A7B34E0D2978182A005AC14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B34E0C2978182A005AC14E /* Assets.xcassets */; };
 		A7B34E102978182A005AC14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B34E0E2978182A005AC14E /* LaunchScreen.storyboard */; };
-		A7B34E18297818CE005AC14E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E17297818CE005AC14E /* ViewController.swift */; };
 		A7B34E1F29781BCE005AC14E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E1E29781BCE005AC14E /* OnboardingViewController.swift */; };
 		A7B34E24297829DC005AC14E /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E23297829DC005AC14E /* OnboardingSlide.swift */; };
 		A7B34E2629783286005AC14E /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E2529783286005AC14E /* OnboardingCollectionViewCell.swift */; };
@@ -23,13 +23,13 @@
 		07B4B484F5120FDA907D1E5B /* Pods-Yammie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yammie.release.xcconfig"; path = "Target Support Files/Pods-Yammie/Pods-Yammie.release.xcconfig"; sourceTree = "<group>"; };
 		45FF6940F151D7E6F926296E /* Pods-Yammie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yammie.debug.xcconfig"; path = "Target Support Files/Pods-Yammie/Pods-Yammie.debug.xcconfig"; sourceTree = "<group>"; };
 		A747D9D4297D7F6700039AB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A747D9DE297E857200039AB8 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		A7B34E0029781828005AC14E /* Yammie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yammie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B34E0329781828005AC14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B34E0529781828005AC14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7B34E0C2978182A005AC14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7B34E0F2978182A005AC14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7B34E112978182A005AC14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7B34E17297818CE005AC14E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7B34E1E29781BCE005AC14E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A7B34E23297829DC005AC14E /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		A7B34E2529783286005AC14E /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				A747D9D4297D7F6700039AB8 /* HomeViewController.swift */,
+				A747D9DE297E857200039AB8 /* CategoryView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -135,7 +136,6 @@
 			children = (
 				A747D9D3297D7F4600039AB8 /* Home */,
 				A7B34E2029781CD5005AC14E /* Onboarding */,
-				A7B34E17297818CE005AC14E /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,10 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7B34E18297818CE005AC14E /* ViewController.swift in Sources */,
 				A7B34E0429781828005AC14E /* AppDelegate.swift in Sources */,
 				A7B34E0629781828005AC14E /* SceneDelegate.swift in Sources */,
 				A7B34E1F29781BCE005AC14E /* OnboardingViewController.swift in Sources */,
+				A747D9DF297E857200039AB8 /* CategoryView.swift in Sources */,
 				A7B34E24297829DC005AC14E /* OnboardingSlide.swift in Sources */,
 				A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */,
 				A7B34E2629783286005AC14E /* OnboardingCollectionViewCell.swift in Sources */,
