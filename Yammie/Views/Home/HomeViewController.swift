@@ -10,12 +10,21 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
+    private let foodCategories: [DishCategory] = [
+        .init(id: "id1", name: "Africa Dish 1", image: "https://picsum.photos/100/200"),
+        .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
+        .init(id: "id3", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
+        .init(id: "id4", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
+        .init(id: "id5", name: "Africa Dish 5", image: "https://picsum.photos/100/200")
+    ]
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.isScrollEnabled = true
         return scrollView
     }()
     
-    private lazy var foodCategoryView = CategoryView(categoryName: "Food Category")
+    private lazy var foodCategoryView = CategoryView(categoryName: "Food Category", categories: self.foodCategories)
     private lazy var popularDishesView = CategoryView(categoryName: "Popular Dishes")
     private lazy var chefSpecialsView = CategoryView(categoryName: "Chef's Specials")
     

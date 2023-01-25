@@ -7,4 +7,5 @@ target 'Yammie' do
 
   # Pods for Yammie
 pod 'SnapKit', '~> 5.6.0'
+pod 'Kingfisher'
 end

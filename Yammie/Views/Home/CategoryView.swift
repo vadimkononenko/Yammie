@@ -10,6 +10,8 @@ import SnapKit
 
 class CategoryView: UIView {
     
+    private var categories: [DishCategory]?
+    
     private let customLabel: UILabel = {
         let label = UILabel()
         label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -17,10 +19,20 @@ class CategoryView: UIView {
         return label
     }()
     
-    private let customCollectionView: UICollectionView = {
+    private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let collView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        return layout
+    }()
+    
+    private lazy var customCollectionView: UICollectionView = {
+        let collView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        collView.showsVerticalScrollIndicator = false
+        collView.showsHorizontalScrollIndicator = false
+        collView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         return collView
     }()
 
@@ -38,12 +50,26 @@ class CategoryView: UIView {
         setup()
     }
     
+    convenience init(categoryName: String, categories: [DishCategory]) {
+        self.init()
+        self.customLabel.text = categoryName
+        self.categories = categories
+        setup()
+    }
+    
     private func setup() {
         setupViews()
         setupConstraints()
+        registerCell()
+    }
+    
+    private func registerCell() {
+        customCollectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.reuseId)
     }
     
     private func setupViews() {
+        customCollectionView.delegate = self
+        customCollectionView.dataSource = self
         addSubview(customLabel)
         addSubview(customCollectionView)
     }
@@ -62,4 +88,16 @@ class CategoryView: UIView {
         }
     }
     
+}
+
+extension CategoryView: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        categories?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = customCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseId, for: indexPath) as! CategoryCollectionViewCell
+        cell.setup(category: categories![indexPath.row])
+        return cell
+    }
 }
