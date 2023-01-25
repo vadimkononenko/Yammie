@@ -42,12 +42,20 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        cellView.layer.shadowColor = UIColor.black.cgColor
-        cellView.layer.shadowOffset = CGSize(width: 5, height: 8)
-        cellView.layer.cornerRadius = 10
-        cellView.layer.shadowOpacity = 0.2
-        cellView.layer.shadowRadius = 5
-        cellView.clipsToBounds = false
+        
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 10
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 10, height: 20)
+        self.layer.shadowRadius = 50
+        
+//        cellView.layer.shadowColor = UIColor.black.cgColor
+//        cellView.layer.shadowOffset = CGSize(width: 5, height: 8)
+//        cellView.layer.cornerRadius = 10
+//        cellView.layer.shadowOpacity = 0.2
+//        cellView.layer.shadowRadius = 5
+//        cellView.clipsToBounds = false
     }
     
     func setup(category: DishCategory) {
@@ -71,8 +79,8 @@ extension CategoryCollectionViewCell {
     
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top)
             make.leading.equalTo(self.snp.leading)
+            make.centerY.equalTo(self.snp.centerY)
             make.width.height.equalTo(40)
         }
         label.snp.makeConstraints { make in
