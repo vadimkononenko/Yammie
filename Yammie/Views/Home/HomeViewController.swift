@@ -71,7 +71,7 @@ extension HomeViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.width.equalTo(scrollView.snp.width)
-            make.height.equalTo(150)
+            make.height.equalTo(140)
         }
         popularDishesView.snp.makeConstraints { make in
             make.top.equalTo(foodCategoryView.snp.bottom)

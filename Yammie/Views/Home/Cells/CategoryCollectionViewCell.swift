@@ -22,6 +22,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
+        label.textAlignment = .left
         return label
     }()
     
@@ -43,19 +44,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 2
+        self.clipsToBounds = false
+        self.layer.borderColor = UIColor(white: 0.6, alpha: 0.3).cgColor
+        self.layer.borderWidth = 0.7
         self.layer.cornerRadius = 10
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 10, height: 20)
-        self.layer.shadowRadius = 50
-        
-//        cellView.layer.shadowColor = UIColor.black.cgColor
-//        cellView.layer.shadowOffset = CGSize(width: 5, height: 8)
-//        cellView.layer.cornerRadius = 10
-//        cellView.layer.shadowOpacity = 0.2
-//        cellView.layer.shadowRadius = 5
-//        cellView.clipsToBounds = false
     }
     
     func setup(category: DishCategory) {
@@ -85,7 +77,7 @@ extension CategoryCollectionViewCell {
         }
         label.snp.makeConstraints { make in
             make.leading.equalTo(imageView.snp.trailing).offset(8)
-            make.trailing.equalTo(self.snp.trailing).offset(-8)
+            make.trailing.equalTo(self.snp.trailing).offset(-16)
             make.centerY.equalTo(imageView)
         }
     }

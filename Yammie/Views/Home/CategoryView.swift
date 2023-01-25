@@ -23,8 +23,7 @@ class CategoryView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return layout
     }()
     
@@ -32,7 +31,6 @@ class CategoryView: UIView {
         let collView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
         collView.showsVerticalScrollIndicator = false
         collView.showsHorizontalScrollIndicator = false
-        collView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         return collView
     }()
 
@@ -77,7 +75,7 @@ class CategoryView: UIView {
     private func setupConstraints() {
         customLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalTo(self.snp.leading).offset(15)
+            make.leading.equalTo(self.snp.leading).offset(20)
             make.trailing.equalTo(self.snp.trailing)
             make.height.equalTo(30)
         }
