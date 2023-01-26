@@ -1,26 +1,24 @@
 //
-//  CategoryView.swift
+//  PopularDishesView.swift
 //  Yammie
 //
-//  Created by Vadim Kononenko on 23.01.2023.
+//  Created by Vadim Kononenko on 26.01.2023.
 //
 
 import UIKit
 import SnapKit
 
-class CategoryView: UIView {
-    
-    private let categories: [DishCategory] = [
-        .init(id: "id1", name: "Africa Dish 1", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "Africa Dish 5", image: "https://picsum.photos/100/200")
+class PopularDishesView: UIView {
+
+    private let dishes: [Dish] = [
+        .init(id: "id1", name: "Garri", description: "This is the best I have ever eatten", image: "https://picsum.photos/100/200", calories: 42.54),
+        .init(id: "id2", name: "Indomie", description: "This is the best I have ever eatten", image: "https://picsum.photos/100/200", calories: 324.23),
+        .init(id: "id3", name: "Pizza", description: "This is the best I have ever eatten", image: "https://picsum.photos/100/200", calories: 534.98)
     ]
     
     private let customLabel: UILabel = {
         let label = UILabel()
-        label.text = "Food Category"
+        label.text = "Popular Dishes"
         label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         return label
@@ -31,8 +29,6 @@ class CategoryView: UIView {
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 5
         return layout
     }()
     
@@ -45,21 +41,21 @@ class CategoryView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {
+    private func configure() {
         setupViews()
         setupConstraints()
         registerCell()
     }
     
     private func registerCell() {
-        customCollectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.reuseId)
+        customCollectionView.register(DishPortraitCollectionViewCell.self, forCellWithReuseIdentifier: DishPortraitCollectionViewCell.reuseId)
     }
     
     private func setupViews() {
@@ -82,17 +78,18 @@ class CategoryView: UIView {
             make.bottom.equalToSuperview()
         }
     }
-    
+
 }
 
-extension CategoryView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PopularDishesView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return dishes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = customCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseId, for: indexPath) as! CategoryCollectionViewCell
-        cell.setup(category: categories[indexPath.row])
+        let cell = customCollectionView.dequeueReusableCell(withReuseIdentifier: DishPortraitCollectionViewCell.reuseId, for: indexPath) as! DishPortraitCollectionViewCell
+        cell.setupDish(dish: dishes[indexPath.row])
         return cell
     }
+    
 }

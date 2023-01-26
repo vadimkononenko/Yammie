@@ -10,23 +10,27 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
-    private let foodCategories: [DishCategory] = [
-        .init(id: "id1", name: "Africa Dish 1", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "Africa Dish 5", image: "https://picsum.photos/100/200")
-    ]
+    private var contentSize: CGSize {
+        CGSize(width: view.frame.width, height: view.frame.height + 400)
+    }
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.isScrollEnabled = true
+        scrollView.alwaysBounceVertical = true
+        scrollView.frame = view.bounds
+        scrollView.contentSize = contentSize
         return scrollView
     }()
     
-    private lazy var foodCategoryView = CategoryView(categoryName: "Food Category", categories: self.foodCategories)
-    private lazy var popularDishesView = CategoryView(categoryName: "Popular Dishes")
-    private lazy var chefSpecialsView = CategoryView(categoryName: "Chef's Specials")
+    private lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.frame.size = contentSize
+        return contentView
+    }()
+    
+    private lazy var foodCategoryView = CategoryView()
+    private lazy var popularDishesView = PopularDishesView()
+    private lazy var chefSpecialsView = CategoryView()
     
     private lazy var barButton: UIBarButtonItem = {
         let btn = UIBarButtonItem()
@@ -37,7 +41,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
     }
 }
@@ -53,28 +56,31 @@ extension HomeViewController {
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = barButton
         
-        scrollView.addSubview(foodCategoryView)
-        scrollView.addSubview(popularDishesView)
-        scrollView.addSubview(chefSpecialsView)
-        
         view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(foodCategoryView)
+        contentView.addSubview(popularDishesView)
+        contentView.addSubview(chefSpecialsView)
     }
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
-            make.top.bottom.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalTo(view.safeAreaLayoutGuide)
-            make.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.top.bottom.equalTo(view)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+        }
+        contentView.snp.makeConstraints { make in
+            make.top.bottom.leading.trailing.equalTo(view)
         }
         foodCategoryView.snp.makeConstraints { make in
             make.top.equalTo(scrollView.snp.top)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.width.equalTo(scrollView.snp.width)
-            make.height.equalTo(140)
+            make.height.equalTo(135)
         }
         popularDishesView.snp.makeConstraints { make in
-            make.top.equalTo(foodCategoryView.snp.bottom)
+            make.top.equalTo(foodCategoryView.snp.bottom).offset(8)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.width.equalTo(scrollView.snp.width)
@@ -85,7 +91,7 @@ extension HomeViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.width.equalTo(scrollView.snp.width)
-            make.height.equalTo(150)
+            make.height.equalTo(135)
         }
     }
 }

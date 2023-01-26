@@ -12,6 +12,9 @@
 		A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */; };
 		A7496B2A297EA5CB00B87893 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B29297EA5CB00B87893 /* DishCategory.swift */; };
 		A7496B2D297EB8EC00B87893 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B2C297EB8EC00B87893 /* String+Extention.swift */; };
+		A7B17C3C29828CC6009FF92B /* DishPortraitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B17C3B29828CC6009FF92B /* DishPortraitCollectionViewCell.swift */; };
+		A7B17C3E298290EB009FF92B /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B17C3D298290EB009FF92B /* Dish.swift */; };
+		A7B17C4029829278009FF92B /* PopularDishesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B17C3F29829278009FF92B /* PopularDishesView.swift */; };
 		A7B34E0429781828005AC14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E0329781828005AC14E /* AppDelegate.swift */; };
 		A7B34E0629781828005AC14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E0529781828005AC14E /* SceneDelegate.swift */; };
 		A7B34E0D2978182A005AC14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B34E0C2978182A005AC14E /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 		A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7496B29297EA5CB00B87893 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		A7496B2C297EB8EC00B87893 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		A7B17C3B29828CC6009FF92B /* DishPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7B17C3D298290EB009FF92B /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		A7B17C3F29829278009FF92B /* PopularDishesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishesView.swift; sourceTree = "<group>"; };
 		A7B34E0029781828005AC14E /* Yammie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yammie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B34E0329781828005AC14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B34E0529781828005AC14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 				A7496B26297EA01F00B87893 /* Cells */,
 				A747D9D4297D7F6700039AB8 /* HomeViewController.swift */,
 				A747D9DE297E857200039AB8 /* CategoryView.swift */,
+				A7B17C3F29829278009FF92B /* PopularDishesView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -85,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */,
+				A7B17C3B29828CC6009FF92B /* DishPortraitCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 			children = (
 				A7B34E23297829DC005AC14E /* OnboardingSlide.swift */,
 				A7496B29297EA5CB00B87893 /* DishCategory.swift */,
+				A7B17C3D298290EB009FF92B /* Dish.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,8 +319,11 @@
 				A7B34E1F29781BCE005AC14E /* OnboardingViewController.swift in Sources */,
 				A747D9DF297E857200039AB8 /* CategoryView.swift in Sources */,
 				A7B34E24297829DC005AC14E /* OnboardingSlide.swift in Sources */,
+				A7B17C4029829278009FF92B /* PopularDishesView.swift in Sources */,
 				A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */,
 				A7496B2A297EA5CB00B87893 /* DishCategory.swift in Sources */,
+				A7B17C3E298290EB009FF92B /* Dish.swift in Sources */,
+				A7B17C3C29828CC6009FF92B /* DishPortraitCollectionViewCell.swift in Sources */,
 				A7B34E2629783286005AC14E /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

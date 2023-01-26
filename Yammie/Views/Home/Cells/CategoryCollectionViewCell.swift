@@ -52,7 +52,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     func setup(category: DishCategory) {
         label.text = category.name
-        imageView.kf.setImage(with: category.image.asUrl)
+        imageView.kf.setImage(with: category.image?.asUrl)
     }
     
 }
@@ -66,7 +66,6 @@ extension CategoryCollectionViewCell {
     private func setupViews() {
         self.addSubview(imageView)
         self.addSubview(label)
-        
     }
     
     private func setupConstraints() {
