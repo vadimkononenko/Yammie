@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     
     private lazy var foodCategoryView = CategoryView()
     private lazy var popularDishesView = PopularDishesView()
-    private lazy var chefSpecialsView = CategoryView()
+    private lazy var chefSpecialsView = SpecialsView()
     
     private lazy var barButton: UIBarButtonItem = {
         let btn = UIBarButtonItem()
@@ -91,7 +91,7 @@ extension HomeViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.width.equalTo(scrollView.snp.width)
-            make.height.equalTo(135)
+            make.height.equalTo(120)
         }
     }
 }
