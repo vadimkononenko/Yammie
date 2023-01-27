@@ -24,6 +24,8 @@
 		A7B34E1F29781BCE005AC14E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E1E29781BCE005AC14E /* OnboardingViewController.swift */; };
 		A7B34E24297829DC005AC14E /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E23297829DC005AC14E /* OnboardingSlide.swift */; };
 		A7B34E2629783286005AC14E /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34E2529783286005AC14E /* OnboardingCollectionViewCell.swift */; };
+		A7BAF17E2983DC8E0009C644 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAF17D2983DC8E0009C644 /* DetailViewController.swift */; };
+		A7BAF1802983DCB40009C644 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAF17F2983DCB40009C644 /* DetailView.swift */; };
 		C0792129094C2288CA17B8D3 /* Pods_Yammie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DF19BFA4DA115AD43CC5AD /* Pods_Yammie.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		A7B34E1E29781BCE005AC14E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A7B34E23297829DC005AC14E /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		A7B34E2529783286005AC14E /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7BAF17D2983DC8E0009C644 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A7BAF17F2983DCB40009C644 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A9DF19BFA4DA115AD43CC5AD /* Pods_Yammie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yammie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				A7496B2B297EB8CA00B87893 /* Extentions */,
-				A7B34E1D29781B96005AC14E /* CustomViews */,
 				A7B34E1C29781B90005AC14E /* Views */,
 				A7B34E1B29781B8A005AC14E /* Models */,
 				A7B34E1929781969005AC14E /* Application */,
@@ -174,17 +177,11 @@
 		A7B34E1C29781B90005AC14E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A7BAF17C2983DC3E0009C644 /* Detail */,
 				A747D9D3297D7F4600039AB8 /* Home */,
 				A7B34E2029781CD5005AC14E /* Onboarding */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A7B34E1D29781B96005AC14E /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		A7B34E2029781CD5005AC14E /* Onboarding */ = {
@@ -202,6 +199,15 @@
 				A7B34E2529783286005AC14E /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A7BAF17C2983DC3E0009C644 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A7BAF17D2983DC8E0009C644 /* DetailViewController.swift */,
+				A7BAF17F2983DCB40009C644 /* DetailView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,11 +326,13 @@
 			files = (
 				A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */,
 				A7496B2D297EB8EC00B87893 /* String+Extention.swift in Sources */,
+				A7BAF1802983DCB40009C644 /* DetailView.swift in Sources */,
 				A7B34E0429781828005AC14E /* AppDelegate.swift in Sources */,
 				A7B34E0629781828005AC14E /* SceneDelegate.swift in Sources */,
 				A7B34E1F29781BCE005AC14E /* OnboardingViewController.swift in Sources */,
 				A747D9DF297E857200039AB8 /* CategoryView.swift in Sources */,
 				A7B34E24297829DC005AC14E /* OnboardingSlide.swift in Sources */,
+				A7BAF17E2983DC8E0009C644 /* DetailViewController.swift in Sources */,
 				A7B17C4029829278009FF92B /* PopularDishesView.swift in Sources */,
 				A7B17C4429830449009FF92B /* DishLandscapeCollectionViewCell.swift in Sources */,
 				A7B17C4829832C2A009FF92B /* SpecialsView.swift in Sources */,
