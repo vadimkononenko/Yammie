@@ -26,16 +26,6 @@ class CategoryView: UIView {
         return label
     }()
     
-//    private let layout: UICollectionViewFlowLayout = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-//        layout.minimumInteritemSpacing = 5
-//        layout.minimumLineSpacing = 5
-//        return layout
-//    }()
-    
     private lazy var customCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

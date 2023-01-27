@@ -11,7 +11,7 @@ import SnapKit
 class HomeViewController: UIViewController {
     
     private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height + 400)
+        CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     private lazy var scrollView: UIScrollView = {
@@ -87,7 +87,7 @@ extension HomeViewController {
             make.height.equalTo(300)
         }
         chefSpecialsView.snp.makeConstraints { make in
-            make.top.equalTo(popularDishesView.snp.bottom)
+            make.top.equalTo(popularDishesView.snp.bottom).offset(8)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.width.equalTo(scrollView.snp.width)

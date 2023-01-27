@@ -89,7 +89,7 @@ extension SpecialsView: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension SpecialsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: customCollectionView.frame.width/1.5, height: customCollectionView.frame.height)
+        return CGSize(width: customCollectionView.frame.width/1.5, height: customCollectionView.frame.height - 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -97,6 +97,6 @@ extension SpecialsView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
     }
 }
