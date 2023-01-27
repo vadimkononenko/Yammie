@@ -23,13 +23,15 @@ class DishPortraitCollectionViewCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textAlignment = .center
         return label
     }()
     
     private let dishImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         return imageView
     }()
@@ -71,6 +73,9 @@ class DishPortraitCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupViews() {
+        self.layer.cornerRadius = 10
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1
         dishStackView.addArrangedSubview(titleLabel)
         dishStackView.addArrangedSubview(dishImageView)
         dishStackView.addArrangedSubview(caloriesLabel)
@@ -79,10 +84,6 @@ class DishPortraitCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupConstraints() {
-        dishImageView.snp.makeConstraints { make in
-            make.height.equalTo(150)
-            make.width.equalTo(150)
-        }
         dishStackView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(8)
             make.bottom.equalTo(self.snp.bottom).offset(-8)

@@ -24,16 +24,10 @@ class PopularDishesView: UIView {
         return label
     }()
     
-    private let layout: UICollectionViewFlowLayout = {
+    private lazy var customCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        return layout
-    }()
-    
-    private lazy var customCollectionView: UICollectionView = {
-        let collView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        let collView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collView.showsVerticalScrollIndicator = false
         collView.showsHorizontalScrollIndicator = false
         return collView
@@ -92,4 +86,18 @@ extension PopularDishesView: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell
     }
     
+}
+
+extension PopularDishesView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: customCollectionView.frame.width/2.5, height: customCollectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
 }
