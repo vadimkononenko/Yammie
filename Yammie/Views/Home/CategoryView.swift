@@ -26,18 +26,20 @@ class CategoryView: UIView {
         return label
     }()
     
-    private let layout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 5
-        return layout
-    }()
+//    private let layout: UICollectionViewFlowLayout = {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal
+//        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+//        layout.minimumInteritemSpacing = 5
+//        layout.minimumLineSpacing = 5
+//        return layout
+//    }()
     
     private lazy var customCollectionView: UICollectionView = {
-        let collView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collView.showsVerticalScrollIndicator = false
         collView.showsHorizontalScrollIndicator = false
         return collView
@@ -94,5 +96,19 @@ extension CategoryView: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = customCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseId, for: indexPath) as! CategoryCollectionViewCell
         cell.setup(category: categories[indexPath.row])
         return cell
+    }
+}
+
+extension CategoryView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: customCollectionView.frame.width/2.5, height: customCollectionView.frame.height/2 - 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
     }
 }

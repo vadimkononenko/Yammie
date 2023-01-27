@@ -15,13 +15,15 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 5
         return imageView
     }()
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         label.textAlignment = .left
         return label
     }()
@@ -44,9 +46,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.clipsToBounds = false
-        self.layer.borderColor = UIColor(white: 0.6, alpha: 0.3).cgColor
-        self.layer.borderWidth = 0.7
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1
         self.layer.cornerRadius = 10
     }
     
@@ -70,9 +71,9 @@ extension CategoryCollectionViewCell {
     
     private func setupConstraints() {
         imageView.snp.makeConstraints { make in
-            make.leading.equalTo(self.snp.leading)
             make.centerY.equalTo(self.snp.centerY)
-            make.width.height.equalTo(40)
+            make.leading.equalTo(self.snp.leading).offset(8)
+            make.width.height.equalTo(self.frame.height - 16)
         }
         label.snp.makeConstraints { make in
             make.leading.equalTo(imageView.snp.trailing).offset(8)
