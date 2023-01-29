@@ -10,10 +10,12 @@ import SnapKit
 
 class DetailView: UIView {
 
+    var dish: Dish!
+    
     private let detailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "slide3")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -72,6 +74,12 @@ class DetailView: UIView {
         return button
     }()
     
+    convenience init(dish: Dish) {
+        self.init()
+        self.dish = dish
+        populateView()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -83,6 +91,13 @@ class DetailView: UIView {
     
     @objc private func order() {
         
+    }
+    
+    private func populateView() {
+        detailImageView.kf.setImage(with: dish.image?.asUrl)
+        nameLabel.text = dish.name
+        descriptionLabel.text = dish.description
+        caloriesLabel.text = dish.formattedCalories
     }
     
 }

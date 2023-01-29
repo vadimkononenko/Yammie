@@ -166,6 +166,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         default: return UICollectionViewCell()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == foodCategoryCollectionView {
+            
+        } else {
+            let vc = DetailViewController()
+            vc.dish = collectionView == popularDishCollectionView ? populars[indexPath.row] : specials[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
