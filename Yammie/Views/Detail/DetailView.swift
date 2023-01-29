@@ -70,7 +70,7 @@ class DetailView: UIView {
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(order), for: .touchUpInside)
         return button
-    }()w
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
