@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A70B3F282986A04300AC608C /* UICollectionView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F272986A04300AC608C /* UICollectionView+Extention.swift */; };
 		A70B3F2A2986A1AC00AC608C /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F292986A1AC00AC608C /* UILabel+Extention.swift */; };
+		A70B3F2E2986B53700AC608C /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F2D2986B53700AC608C /* DishListTableViewCell.swift */; };
+		A70B3F312986BB3C00AC608C /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F302986BB3C00AC608C /* ListDishesViewController.swift */; };
 		A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D9D4297D7F6700039AB8 /* HomeViewController.swift */; };
 		A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */; };
 		A7496B2A297EA5CB00B87893 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B29297EA5CB00B87893 /* DishCategory.swift */; };
@@ -34,6 +36,8 @@
 		45FF6940F151D7E6F926296E /* Pods-Yammie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yammie.debug.xcconfig"; path = "Target Support Files/Pods-Yammie/Pods-Yammie.debug.xcconfig"; sourceTree = "<group>"; };
 		A70B3F272986A04300AC608C /* UICollectionView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extention.swift"; sourceTree = "<group>"; };
 		A70B3F292986A1AC00AC608C /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
+		A70B3F2D2986B53700AC608C /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
+		A70B3F302986BB3C00AC608C /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
 		A747D9D4297D7F6700039AB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7496B29297EA5CB00B87893 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
@@ -83,6 +87,23 @@
 				A9DF19BFA4DA115AD43CC5AD /* Pods_Yammie.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A70B3F2F2986BAF600AC608C /* ListDishes */ = {
+			isa = PBXGroup;
+			children = (
+				A70B3F322986BE4600AC608C /* Cells */,
+				A70B3F302986BB3C00AC608C /* ListDishesViewController.swift */,
+			);
+			path = ListDishes;
+			sourceTree = "<group>";
+		};
+		A70B3F322986BE4600AC608C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A70B3F2D2986B53700AC608C /* DishListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A747D9D3297D7F4600039AB8 /* Home */ = {
@@ -177,6 +198,7 @@
 		A7B34E1C29781B90005AC14E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A70B3F2F2986BAF600AC608C /* ListDishes */,
 				A7BAF17C2983DC3E0009C644 /* Detail */,
 				A747D9D3297D7F4600039AB8 /* Home */,
 				A7B34E2029781CD5005AC14E /* Onboarding */,
@@ -324,11 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70B3F312986BB3C00AC608C /* ListDishesViewController.swift in Sources */,
 				A7BAF18229843A4F0009C644 /* UIViewController+Extention.swift in Sources */,
 				A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */,
 				A7496B2D297EB8EC00B87893 /* String+Extention.swift in Sources */,
 				A7BAF1802983DCB40009C644 /* DetailView.swift in Sources */,
 				A7B34E0429781828005AC14E /* AppDelegate.swift in Sources */,
+				A70B3F2E2986B53700AC608C /* DishListTableViewCell.swift in Sources */,
 				A70B3F2A2986A1AC00AC608C /* UILabel+Extention.swift in Sources */,
 				A7B34E0629781828005AC14E /* SceneDelegate.swift in Sources */,
 				A70B3F282986A04300AC608C /* UICollectionView+Extention.swift in Sources */,

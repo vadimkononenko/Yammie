@@ -169,7 +169,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == foodCategoryCollectionView {
-            
+            let vc = ListDishesViewController()
+            vc.category = categories[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = DetailViewController()
             vc.dish = collectionView == popularDishCollectionView ? populars[indexPath.row] : specials[indexPath.row]
