@@ -14,7 +14,6 @@ class DetailView: UIView {
     
     private let detailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "slide3")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -36,7 +35,6 @@ class DetailView: UIView {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Label"
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 0
         return label
@@ -44,14 +42,12 @@ class DetailView: UIView {
     
     private let caloriesLabel: UILabel = {
         let label = UILabel()
-        label.text = "Label"
         label.textColor = .systemRed
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label"
         label.textColor = .systemGray
         label.font = UIFont.systemFont(ofSize: 15)
         label.numberOfLines = 0
