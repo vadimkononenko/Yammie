@@ -33,8 +33,7 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var barButton: UIBarButtonItem = {
-        let btn = UIBarButtonItem()
-        btn.image = UIImage(systemName: "cart.circle.fill")
+        let btn = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(openOrders))
         btn.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         return btn
     }()
@@ -51,6 +50,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configure()
     }
+    
+    @objc private func openOrders() {
+        let vc = ListOrdersViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension HomeViewController {
@@ -64,6 +69,7 @@ extension HomeViewController {
         title = "Yammie"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = barButton
+        navigationItem.backButtonTitle = " "
         
         foodCategoryCollectionView.delegate = self
         foodCategoryCollectionView.dataSource = self
