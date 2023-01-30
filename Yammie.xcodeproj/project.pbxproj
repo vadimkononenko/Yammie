@@ -13,6 +13,9 @@
 		A70B3F312986BB3C00AC608C /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F302986BB3C00AC608C /* ListDishesViewController.swift */; };
 		A70B3F352988018D00AC608C /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F342988018D00AC608C /* ListOrdersViewController.swift */; };
 		A70B3F3729880E1900AC608C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F3629880E1900AC608C /* Order.swift */; };
+		A70B3F3A2988202500AC608C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F392988202500AC608C /* NetworkService.swift */; };
+		A70B3F3C298827CA00AC608C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F3B298827CA00AC608C /* Route.swift */; };
+		A70B3F3E298829FA00AC608C /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F3D298829FA00AC608C /* Method.swift */; };
 		A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D9D4297D7F6700039AB8 /* HomeViewController.swift */; };
 		A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */; };
 		A7496B2A297EA5CB00B87893 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B29297EA5CB00B87893 /* DishCategory.swift */; };
@@ -42,6 +45,9 @@
 		A70B3F302986BB3C00AC608C /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
 		A70B3F342988018D00AC608C /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
 		A70B3F3629880E1900AC608C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		A70B3F392988202500AC608C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A70B3F3B298827CA00AC608C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		A70B3F3D298829FA00AC608C /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		A747D9D4297D7F6700039AB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7496B29297EA5CB00B87893 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
@@ -118,6 +124,16 @@
 			path = ListOrders;
 			sourceTree = "<group>";
 		};
+		A70B3F382988200B00AC608C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A70B3F392988202500AC608C /* NetworkService.swift */,
+				A70B3F3B298827CA00AC608C /* Route.swift */,
+				A70B3F3D298829FA00AC608C /* Method.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		A747D9D3297D7F4600039AB8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +185,7 @@
 		A7B34E0229781828005AC14E /* Yammie */ = {
 			isa = PBXGroup;
 			children = (
+				A70B3F382988200B00AC608C /* Networking */,
 				A7496B2B297EB8CA00B87893 /* Extentions */,
 				A7B34E1C29781B90005AC14E /* Views */,
 				A7B34E1B29781B8A005AC14E /* Models */,
@@ -360,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70B3F3A2988202500AC608C /* NetworkService.swift in Sources */,
 				A70B3F312986BB3C00AC608C /* ListDishesViewController.swift in Sources */,
 				A7BAF18229843A4F0009C644 /* UIViewController+Extention.swift in Sources */,
 				A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */,
@@ -367,7 +385,9 @@
 				A7BAF1802983DCB40009C644 /* DetailView.swift in Sources */,
 				A7B34E0429781828005AC14E /* AppDelegate.swift in Sources */,
 				A70B3F3729880E1900AC608C /* Order.swift in Sources */,
+				A70B3F3E298829FA00AC608C /* Method.swift in Sources */,
 				A70B3F2E2986B53700AC608C /* DishListTableViewCell.swift in Sources */,
+				A70B3F3C298827CA00AC608C /* Route.swift in Sources */,
 				A70B3F352988018D00AC608C /* ListOrdersViewController.swift in Sources */,
 				A70B3F2A2986A1AC00AC608C /* UILabel+Extention.swift in Sources */,
 				A7B34E0629781828005AC14E /* SceneDelegate.swift in Sources */,
