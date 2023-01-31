@@ -16,6 +16,7 @@
 		A70B3F3A2988202500AC608C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F392988202500AC608C /* NetworkService.swift */; };
 		A70B3F3C298827CA00AC608C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F3B298827CA00AC608C /* Route.swift */; };
 		A70B3F3E298829FA00AC608C /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B3F3D298829FA00AC608C /* Method.swift */; };
+		A741CAA42989070A00DE86AC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741CAA32989070A00DE86AC /* AppError.swift */; };
 		A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D9D4297D7F6700039AB8 /* HomeViewController.swift */; };
 		A7496B28297EA08100B87893 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */; };
 		A7496B2A297EA5CB00B87893 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7496B29297EA5CB00B87893 /* DishCategory.swift */; };
@@ -48,6 +49,7 @@
 		A70B3F392988202500AC608C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A70B3F3B298827CA00AC608C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		A70B3F3D298829FA00AC608C /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		A741CAA32989070A00DE86AC /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		A747D9D4297D7F6700039AB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A7496B27297EA08100B87893 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7496B29297EA5CB00B87893 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				A70B3F392988202500AC608C /* NetworkService.swift */,
 				A70B3F3B298827CA00AC608C /* Route.swift */,
 				A70B3F3D298829FA00AC608C /* Method.swift */,
+				A741CAA32989070A00DE86AC /* AppError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				A70B3F282986A04300AC608C /* UICollectionView+Extention.swift in Sources */,
 				A7B34E1F29781BCE005AC14E /* OnboardingViewController.swift in Sources */,
 				A7B34E24297829DC005AC14E /* OnboardingSlide.swift in Sources */,
+				A741CAA42989070A00DE86AC /* AppError.swift in Sources */,
 				A7BAF17E2983DC8E0009C644 /* DetailViewController.swift in Sources */,
 				A7B17C4429830449009FF92B /* DishLandscapeCollectionViewCell.swift in Sources */,
 				A747D9D5297D7F6700039AB8 /* HomeViewController.swift in Sources */,

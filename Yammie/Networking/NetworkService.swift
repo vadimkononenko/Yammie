@@ -8,6 +8,42 @@
 import Foundation
 
 struct NetworkService {
+    
+    static let shared = NetworkService()
+    
+    private init() {}
+    
+    func firstRequest() {
+        request(route: .temp, method: .get, type: String.self, complition: { _ in })
+    }
+    
+    private func request<T: Codable>(route: Route,
+                         method: Method,
+                         parameters: [String:Any]? = nil,
+                         type: T.Type,
+                         complition: (Result<T, Error>) -> Void) {
+        guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+            complition(.failure(AppError.unknownError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            var result: Result<Data, Error>?
+            if let data = data {
+                result = .success(data)
+                let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
+                print("The response is: \(responseString)")
+            } else if let error = error {
+                result = .failure(error)
+                print("The error is: \(error.localizedDescription)")
+            }
+            
+            DispatchQueue.main.async {
+                // TODO decode result and send back
+            }
+        }.resume()
+    }
+    
     /// This function helps us to generate a urlRequest
     /// - Parameters:
     ///   - route: the path to the resource in the backend
